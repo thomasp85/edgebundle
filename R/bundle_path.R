@@ -84,7 +84,9 @@ edge_bundle_path <- function(g, xy, max_distortion = 2, weight_fac = 2, segments
 path_length <- function(verts, xy) {
     plen <- 0
     for (i in 1:(length(verts) - 1)) {
-        plen <- plen + sqrt((xy[i, 1] - xy[i + 1, 1])^2 + (xy[i, 2] - xy[i + 1, 2])^2)
+        j <- verts[i]
+        j1 <- verts[i + 1]
+        plen <- plen + sqrt((xy[j, 1] - xy[j1, 1])^2 + (xy[j, 2] - xy[j1, 2])^2)
     }
     plen
 }
